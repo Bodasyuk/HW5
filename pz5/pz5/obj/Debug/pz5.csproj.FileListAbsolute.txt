@@ -1,0 +1,6 @@
+C:\Users\Dell\Desktop\HW5\pz5\pz5\bin\Debug\pz5.exe.config
+C:\Users\Dell\Desktop\HW5\pz5\pz5\bin\Debug\pz5.exe
+C:\Users\Dell\Desktop\HW5\pz5\pz5\bin\Debug\pz5.pdb
+C:\Users\Dell\Desktop\HW5\pz5\pz5\obj\Debug\pz5.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\HW5\pz5\pz5\obj\Debug\pz5.exe
+C:\Users\Dell\Desktop\HW5\pz5\pz5\obj\Debug\pz5.pdb

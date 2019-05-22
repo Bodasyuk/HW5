@@ -9,7 +9,7 @@ namespace pz5
 {
     class MyConsole
     {
-        static string CommandsPath = "";
+        static string CommandsPath = "C:/Users/Dell/Desktop/HW5/pz5/Text.txt";
         Dictionary<string, string> Links { get; set; }
         Dictionary<string, int> LNKeys { get; set; }
         Dictionary<string, int> Commands { get; set; }
