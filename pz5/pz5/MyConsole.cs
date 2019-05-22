@@ -48,6 +48,84 @@ namespace pz5
             //Console.WriteLine(Text);
             File.WriteAllText(CommandsPath, Text);
         }
+        public void Print()
+        {
+            Console.Write(Directory + ">");
+        }
+        public void LN(string NameForLink, string WhatLinked, string Key = "-s")
+        {
+            switch (LNKeys[Key])
+            {
+                case 1:
+                    // standart
+                    if (Links.ContainsKey(NameForLink))
+                    {
+                        Console.WriteLine("It name used for another link");
+                        return;
+                    }
+                    else
+                    {
+                        Links.Add(NameForLink, WhatLinked);
+                    }
+                    break;
+                case 2:
+                    // rewrite if link with that name used
+                    if (Links.ContainsKey(NameForLink))
+                    {
+                        Links[NameForLink] = WhatLinked;
+                    }
+                    else
+                    {
+                        Links.Add(NameForLink, WhatLinked);
+                    }
+                    break;
+            }
+        }
+        public void CAT(string Link)
+        {
+            bool Exist = Links.ContainsKey(Link);
+            if (!Exist)
+            {
+                Console.WriteLine("Cannot find that link");
+            }
+            else
+            {
+                while (Links.ContainsKey(Link))
+                {
+                    Link = Links[Link];
+                }
+                Console.WriteLine(Link);
+            }
+        }
+        public void Work()
+        {
+            Read();
+            while (true)
+            {
+                Print();
+                string Line = Console.ReadLine();
+                switch (Commands[Line.Split()[0]])
+                {
+                    case 1:
+                        CAT(Line.Split()[1]);
+                        Write();
+                        break;
+                    case 2:
+                        switch (Line.Split().Length)
+                        {
+                            case 3:
+                                LN(Line.Split()[1], Line.Split()[2]);
+                                Write();
+                                break;
+                            case 4:
+                                LN(Line.Split()[2], Line.Split()[3], Line.Split()[1]);
+                                Write();
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
 
     }
 }
